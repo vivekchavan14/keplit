@@ -1,12 +1,12 @@
 "use client"
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { useState } from 'react';
 import { IoIosFlash } from 'react-icons/io';
 
 const Nav = () => {
   const [activeSection, setActiveSection] = useState<string>("home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false); // State for mobile menu toggle
 
   const navItems = [
     { name: "Home", link: "#home" },
@@ -21,6 +21,10 @@ const Nav = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen); // Toggle the mobile menu visibility
   };
 
   return (
@@ -64,7 +68,7 @@ const Nav = () => {
 
         {/* Mobile Menu Button */}
         <div className="block md:hidden">
-          <button className="text-gray-300 hover:text-white">
+          <button className="text-gray-300 hover:text-white" onClick={toggleMobileMenu}>
             {/* Simple Hamburger Icon */}
             <svg
               className="w-6 h-6"
@@ -82,6 +86,34 @@ const Nav = () => {
             </svg>
           </button>
         </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden ${isMobileMenuOpen ? "block" : "hidden"} bg-black text-white py-4 px-6`}
+      >
+        {navItems.map((item) => (
+          <button
+            key={item.name}
+            className={`text-sm font-medium block px-4 py-2 mb-2 rounded-lg ${
+              activeSection === item.link
+                ? "bg-red-500 text-white"
+                : "text-gray-300 hover:text-white hover:bg-gray-800"
+            }`}
+            onClick={() => handleNavClick(item.link)}
+          >
+            {item.name}
+          </button>
+        ))}
+        <Link
+          href="https://cal.com/vivek-chavan-yzngnu" // Replace with your Cal.com scheduling link
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="w-full px-6 py-3 bg-gradient-to-r from-red-500 to-red-700 text-white text-sm font-semibold rounded-lg shadow-md hover:scale-105 hover:shadow-xl transition-all">
+            Book a Call
+          </button>
+        </Link>
       </div>
     </nav>
   );
