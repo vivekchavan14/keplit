@@ -1,7 +1,8 @@
 import React from 'react';
 import { IoIosFlash } from 'react-icons/io';
+import { FaUserCircle } from 'react-icons/fa'; // Import avatar-like icon
 import { Spotlight } from './ui/Spotlight';
-import Link from 'next/link'; // Next.js Link import
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -41,14 +42,22 @@ const Hero = () => {
 
         {/* Subtitle */}
         <p className="mt-6 text-sm md:text-lg lg:text-xl text-gray-300 max-w-3xl z-20 leading-relaxed">
-          We specialize in Web and App Development, Cloud-Native Solutions, QA
-          Testing, Deployment, and MVP Development to bring your ideas to life.
+          We digitalize and transform your ideas into cutting-edge solutions,
+          delivering innovation, efficiency, and excellence to help you thrive in a competitive digital era.
         </p>
 
-        {/* Learn More Button */}
-        <button className="mt-8 px-8 py-4 bg-gradient-to-r from-red-500 to-gray-600 hover:from-gray-600 hover:to-red-500 text-white font-medium text-lg rounded-full shadow-lg transition duration-300 z-20 transform hover:scale-105">
-          Learn More
-        </button>
+        {/* Schedule Meeting Button */}
+        <Link
+          href="https://cal.com/vivek-chavan-yzngnu" // Replace with your Cal.com scheduling link
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="mt-8 flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-red-500 to-gray-600 hover:from-gray-600 hover:to-red-500 text-white font-medium text-lg rounded-full shadow-lg transition duration-300 z-20 transform hover:scale-105">
+            {/* Icon as Avatar */}
+            Schedule a Meeting
+            <FaUserCircle className="text-2xl text-white" />
+          </button>
+        </Link>
       </div>
     </div>
   );

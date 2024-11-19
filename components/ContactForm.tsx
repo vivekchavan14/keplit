@@ -23,10 +23,10 @@ const ContactForm = () => {
     if (formData.name && formData.email && formData.message) {
       emailjs
         .sendForm(
-          process.env.REACT_APP_EMAILJS_SERVICE_ID as string,
-          process.env.REACT_APP_EMAILJS_TEMPLATE_ID as string,
+          "service_k1l4kb9",
+          "template_x2kqupl",
           e.target as HTMLFormElement,
-          process.env.REACT_APP_EMAILJS_USER_ID as string
+          "up85QBdoBtcyQ6zo2"
         )
         .then(
           () => {
@@ -34,6 +34,7 @@ const ContactForm = () => {
             setFormData({ name: '', email: '', message: '' });
           },
           (error) => {
+            console.error("EmailJS Error: ", error.text);
             setStatus('Something went wrong, please try again.');
           }
         );

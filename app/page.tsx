@@ -7,7 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import { FloatNav } from "@/components/ui/FloatNav";
 import { FaHome, FaServicestack, FaQuoteLeft, FaPhoneAlt } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import { Link as ScrollLink } from "react-scroll"; // Import react-scroll for smooth scrolling
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<string>("home");
