@@ -34,16 +34,17 @@ const Hero = () => {
           </span>
         </div>
 
+     
         {/* Main Title */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-gray-400 to-red-500 z-20 leading-tight">
-          Empowering your business with <br />
-          <span className="text-red-400">end-to-end software solutions</span>
+          Democratizing Digital Transformation for <br />
+          <span className="text-red-400">Businesses of All Sizes</span>
         </h1>
+       
 
         {/* Subtitle */}
         <p className="mt-6 text-sm md:text-lg lg:text-xl text-gray-300 max-w-3xl z-20 leading-relaxed">
-          We digitalize and transform your ideas into cutting-edge solutions,
-          delivering innovation, efficiency, and excellence to help you thrive in a competitive digital era.
+        We empower businesses of every size by making advanced technological solutions accessible. From idea to solution, we guide you every step of the way to deliver innovation, efficiency, and excellence in today's digital era
         </p>
 
         {/* Schedule Meeting Button */}
